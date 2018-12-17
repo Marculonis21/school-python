@@ -17,7 +17,7 @@ for line in lines:
     s[3] = "".join(list(s[3])[:len(s[3])-1])
     allList += [s]
 
-allList.sort(key = lambda x: x[2])
+allList.sort(key=lambda x: x[2])
 
 classList = []
 for X in range(6):
@@ -36,15 +36,15 @@ for X in range(6):
             if(student[2] == trida):
                 tridaList.append(student)
 
-        tridaList.sort(key = lambda x: locale.strxfrm(x[0]))
+        tridaList.sort(key=lambda x: locale.strxfrm(x[0]))
         classList += [tridaList]
 
 classList.pop()
 
 while True:
     try:
-        dec1 = int(input("Vyhledat: Třídu --> 1\n"+
-                         "          Žáka  --> 2\n"+
+        dec1 = int(input("Vyhledat: Třídu --> 1\n" +
+                         "          Žáka  --> 2\n" +
                          "          Vše   --> 3\n"))
 
         if(dec1 > 0 and dec1 < 4):
@@ -52,12 +52,12 @@ while True:
     except ValueError:
         print("INVALID INPUT\n")
 
-_classL_ = ["S1.A","S1.B","S1.C",
-            "S2.A","S2.B","S2.C",
-            "S2.A","S3.B","S3.C",
-            "S4.A","S4.B","S4.C",
-            "S5.A","S5.B","S5.C",
-            "S6.A","S6.B","S6.C"]
+_classL_ = ["S1.A", "S1.B", "S1.C",
+            "S2.A", "S2.B", "S2.C",
+            "S2.A", "S3.B", "S3.C",
+            "S4.A", "S4.B", "S4.C",
+            "S5.A", "S5.B", "S5.C",
+            "S6.A", "S6.B", "S6.C"]
 
 if(dec1 == 1):
     while True:
@@ -81,6 +81,9 @@ if(dec1 == 2):
 
             if(" " in dec2):
                 n1, n2 = dec2.split(" ")
+                n1 = "".join([n1[i].upper() if i == 0 else n1[i].lower() for i in range(len(n1))])
+                n2 = "".join([n2[i].upper() if i == 0 else n2[i].lower() for i in range(len(n2))])
+
             else:
                 n1 = "".join([dec2[i].upper() if i == 0 else dec2[i].lower() for i in range(len(dec2))])
                 n2 = ""
@@ -88,7 +91,10 @@ if(dec1 == 2):
             found = False
             for y in range(len(classList)-1):
                 for x in classList[y]:
-                    if((n1 in x and n2 in x) or (n1 in x and n2 == "")):
+                    if((n1 in x[0] and n2 in x[1]) or
+                       (n1 in x[1] and n2 in x[0]) or
+                       (n1 in x[0] and n2 == "") or
+                       (n1 in x[1] and n2 == "")):
                         found = True
                         break
 
@@ -112,13 +118,13 @@ for trida in classList:
             print("#\n#")
 
             for student in trida:
-                print("{} {}:".format(student[0],student[1]))
+                print("{} {}:".format(student[0], student[1]))
 
                 znamky = {}
 
                 # print(student)
                 for pair in student[3].split(","):
-                    znamka,predmet = pair.split(":")
+                    znamka, predmet = pair.split(":")
 
                     if(predmet in znamky):
                         znamky.update({predmet : znamky[predmet] + "," + znamka})
@@ -133,14 +139,17 @@ for trida in classList:
 
     elif(dec1 == 2):
         for student in trida:
-            if((n1 in student and n2 in student) or (n1 in student and n2 == "")):
-                print("{} {} ({}):".format(student[0],student[1],student[2]))
+            if((n1 in student[0] and n2 in student[1]) or
+               (n1 in student[1] and n2 in student[0]) or
+               (n1 in student[0] and n2 == "") or
+               (n1 in student[1] and n2 == "")):
+                print("{} {} ({}):".format(student[0], student[1], student[2]))
 
                 znamky = {}
 
                 # print(student)
                 for pair in student[3].split(","):
-                    znamka,predmet = pair.split(":")
+                    znamka, predmet = pair.split(":")
 
                     if(predmet in znamky):
                         znamky.update({predmet : znamky[predmet] + "," + znamka})
@@ -160,13 +169,13 @@ for trida in classList:
             print("#\n#")
 
             for student in trida:
-                print("{} {}:".format(student[0],student[1]))
+                print("{} {}:".format(student[0], student[1]))
 
                 znamky = {}
 
                 # print(student)
                 for pair in student[3].split(","):
-                    znamka,predmet = pair.split(":")
+                    znamka, predmet = pair.split(":")
 
                     if(predmet in znamky):
                         znamky.update({predmet : znamky[predmet] + "," + znamka})
