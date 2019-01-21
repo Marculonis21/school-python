@@ -133,7 +133,7 @@ for trida in classList:
 
                 for x in _zList_.split(","):
                     if(x in znamky):
-                        print("{}:  {}  ({:.2f})".format(x, "".join(txt if not txt == "," else "; " for txt in znamky[x]), sum([float(num) for num in znamky[x].split(",")])/len(znamky[x].split(","))))
+                        print("{:3}:  {:55}({:.2f})".format(x, "".join(txt if not txt == "," else "; " for txt in znamky[x]), sum([float(num) for num in znamky[x].split(",")])/len(znamky[x].split(","))))
 
                 print()
 
@@ -158,7 +158,7 @@ for trida in classList:
 
                 for x in _zList_.split(","):
                     if(x in znamky):
-                        print("{}:  {}  ({:.2f})".format(x, "".join(txt if not txt == "," else "; " for txt in znamky[x]), sum([float(num) for num in znamky[x].split(",")])/len(znamky[x].split(","))))
+                        print("{:3}:  {:55}({:.2f})".format(x, "".join(txt if not txt == "," else "; " for txt in znamky[x]), sum([float(num) for num in znamky[x].split(",")])/len(znamky[x].split(","))))
 
                 print()
 
@@ -184,6 +184,6 @@ for trida in classList:
 
                 for x in _zList_.split(","):
                     if(x in znamky):
-                        print("{}:  {}  ({:.2f})".format(x, "".join(txt if not txt == "," else "; " for txt in znamky[x]), sum([float(num) for num in znamky[x].split(",")])/len(znamky[x].split(","))))
+                        print("{:3}:  {:55}({:.2f})".format(x, "".join(txt if not txt == "," else "; " for txt in znamky[x]), sum([float(num) for num in znamky[x].split(",")])/len(znamky[x].split(","))))
 
                 print()
