@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 file = open("tabulka_prodej.csv")
 
 lines = file.readlines()
@@ -8,7 +10,6 @@ aLines = []
 for line in lines:
     x = list(line)
     x.remove("\n")
-    
     aLines += ["".join(x)]
 
 names = []
@@ -43,13 +44,13 @@ for line in aLines:
     _name = x[1]
     _place = x[2]
     _value = x[3]
-    
+
     allList[names.index(_name)][places.index(_place)] += int(_value)
 
 #head
 print("{:<20}".format("Města/Prodejce"),end="")
 for name in names:
-    print("{:<15}".format(name),end="")
+    print("{:<12}".format(name),end="")
 
 print()
 
@@ -58,8 +59,8 @@ for _place in places:
     print("{:<20}".format(_place),end="")
     for _name in names:
         if(allList[names.index(_name)][places.index(_place)] == 0):
-            print("{:<15}".format(7*"-"),end="")
+            print("{:<12}".format(6*"-"),end="")
         else:
-            print("{:<15}".format(allList[names.index(_name)][places.index(_place)]),end="")
+            print("{:<12}".format("{:6}".format(allList[names.index(_name)][places.index(_place)])),end="")
 
     print()
