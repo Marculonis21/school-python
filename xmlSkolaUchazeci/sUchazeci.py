@@ -38,5 +38,5 @@ for loop in range(len(aList)):
     if(loop == 90):
         print(50*"="+"\n"+50*"="+"\n"+50*"=")
         print()
-    elif(loop >= 90):
+    if(loop >= 90):
         print("Pořadí: {}. - {} {} ({}. ročník)\nbody: Čj: {}; Ma: {}\nbody celkem: {}\n".format(loop+1,single[0],single[1],single[2],single[6],single[8],int(single[6])+int(single[8])))
