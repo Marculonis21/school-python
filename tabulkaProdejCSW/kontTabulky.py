@@ -11,7 +11,7 @@ for line in lines:
     x = list(line)
     x.remove("\n")
     aLines += ["".join(x)]
-
+    
 names = []
 places = []
 
@@ -47,6 +47,7 @@ for line in aLines:
 
     allList[names.index(_name)][places.index(_place)] += int(_value)
 
+    
 #head
 print("{:<20}".format("Města/Prodejce"),end="")
 for name in names:
