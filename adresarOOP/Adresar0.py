@@ -3,6 +3,7 @@
 Osoba    - osoba, její adresa, kontakty, seznam štítků....
 Adresar  - seznam kontaktů
 """
+    
 class Osoba:
     """ Osoba v adresáři """
     def __init__(self, prijmeni, jmeno):
@@ -12,21 +13,38 @@ class Osoba:
         self.stitky = []
 
     def __str__(self):
+        return("Osoba {} {} adresa({}), kontakt({}), štítky({})".format(self.jmeno,self.prijmeni,self.adresa(),self.kontakt(),self.stitek()))
         pass
 
     def __repr__(self):
+        return(str(self))
         pass
 
     def adresa(self, bydliste=None, obec=None, psc=None):
         """ nastaví nebo vrátí adresu """
+        if(bydliste == None and obec == None and psc == None):
+            return([self.bydliste, self.obec, self.psc])
+        else:
+            self.bydliste = bydliste
+            self.obec = obec
+            self.psc = psc
+
         pass
 
     def kontakt(self, mail=None, mobil=None):
-        """ nastaví nebo vrátí kontakty """
+        """ nastaví nebo vrátí kontakt"""
+        if(mail == None and mobil == None):
+            return([self.mail, self.mobil])
+        else:
+            self.mail = mail
+            self.mobil = mobil
+            
         pass
 
     def pridej_stitek(self, stitek):
         """ přidá štítek do seznamu """
+        self.stitky.append(stitek)
+        
         pass
 
     def stitek(self, stitek=None):
@@ -34,6 +52,11 @@ class Osoba:
         vrátí  True ne bo False, zda štítek je nebo není nastaven 
         pokud je sitek=None - vrátí seznam všech štítků
         """
+
+        if(stitek == None):
+            return(self.stitky)
+        else:
+            return(stitek in self.stitky)
         pass
 
 class Adresar:
@@ -41,12 +64,21 @@ class Adresar:
     def __init__(self):
         self.adresy = []
 
-    def pridej(osoba):
+    def pridej(self, osoba):
         """ přidá osoba do adresáře """
+        self.adresy.append(osoba)
         pass
 
+    def __str__(self):
+        reutrn("Adresář: {}".)
+         
+    def __repr__(self):
+        return(str(self))
+        pass
+    
     def __iadd__(self, other):
         """ přidání kontaktu do adresáře pomocí += """
+        self.adresy.append(other)
         pass
 
     def __iter__(self):       
@@ -55,3 +87,8 @@ class Adresar:
     def __next__(self):
         pass
 
+if __name__ == "__main__":
+    print("ahojda")
+    os = Osoba("Marek","Ahoj")
+    adresar = Adresar()
+    adresar.pridej(os)
