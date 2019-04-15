@@ -13,7 +13,7 @@ class Osoba:
         self.stitky = []
 
     def __str__(self):
-        return("Osoba {} {} adresa({}), kontakt({}), štítky({})".format(self.jmeno,self.prijmeni,self.adresa(),self.kontakt(),self.stitek()))
+        return("Osoba - {} {} adresa({}), kontakt({}), štítky({})".format(self.jmeno,self.prijmeni,self.adresa(),self.kontakt(),self.stitek()))
         pass
 
     def __repr__(self):
@@ -70,7 +70,12 @@ class Adresar:
         pass
 
     def __str__(self):
-        reutrn("Adresář: {}".)
+        sss = ""
+
+        for i in self.adresy:
+            sss += str(i) + "\n"
+        
+        return sss
          
     def __repr__(self):
         return(str(self))
@@ -81,10 +86,12 @@ class Adresar:
         self.adresy.append(other)
         pass
 
-    def __iter__(self):       
+    def __iter__(self):
+        return iter(self.adresy)
         pass
 
     def __next__(self):
+        return next(self.adresy)
         pass
 
 if __name__ == "__main__":
@@ -92,3 +99,10 @@ if __name__ == "__main__":
     os = Osoba("Marek","Ahoj")
     adresar = Adresar()
     adresar.pridej(os)
+
+    os = Osoba("Strnadová", "Anežka")
+    os.adresa("Hradec", "50801", "U Školy")
+
+    adresar.pridej(os)
+
+    print(adresar)
