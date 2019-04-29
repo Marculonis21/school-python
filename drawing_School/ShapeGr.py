@@ -22,7 +22,6 @@ class Point:
         t.pencolor(color)
         t.setpos(self.x, self.y)
         t.down()
-        t.dot(self.size)
         
     def show(self):
         """ zobrazit objekt """
