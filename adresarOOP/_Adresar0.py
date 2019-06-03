@@ -29,8 +29,6 @@ class Osoba:
             self.obec = obec
             self.psc = psc
 
-        pass
-
     def kontakt(self, mail=None, mobil=None):
         """ nastaví nebo vrátí kontakt"""
         if(mail == None and mobil == None):
@@ -39,7 +37,6 @@ class Osoba:
             self.mail = mail
             self.mobil = mobil
             
-        pass
 
     def pridej_stitek(self, stitek):
         """ přidá štítek do seznamu """
@@ -57,7 +54,6 @@ class Osoba:
             return(self.stitky)
         else:
             return(stitek in self.stitky)
-        pass
 
 class Adresar:
     """ adresář """
