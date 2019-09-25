@@ -97,7 +97,55 @@ příkazová řádka
 		  - spojka & = spuštění příkazui na pozadí - příkazy na sebe nečekají, první se spustí v nové kopii shellu a přesune se do pozadí
 	- stdin = standartní vstup, většinou klávesnice
 	- stdout = standartní výstup, většinou monitor
+
 	- > = přesměrování stdout, např. ls > s.txt (přesměrování do nově vytvořeného textového souboru), ls > /dev/lpr (přesměrování na tiskárnu)
 	- < = přesměrování stdin
 	- stderr = standartní výstup s errorem
 	- 2> = přesměrování chybového výstupu, např. ls adr1 2> /dev/null (chybové hlášení se úplně vymaže, nikde se nehromadí)
+
+###
+https://www.pslib.cz/milan.kerslager/BASH:_Skriptování
+shellové skripty - "hashmark" '#!/bin/bash'
+	- musí být spustitelné
+	- odsazování není nutné! + case sensitive
+
+	příkazy:
+		- echo == print
+		- zakládání proměnné "a = 'abc'"
+		- ->echo $a (výpis) 
+		- high level: echo "v proměnné a je hodnota $a"
+		- bash příkazy do skriptu: echo "výpis adresáře $(ls -al)"
+
+		- předávání parametrů echo ($1 $2)
+
+		- if: 
+		"if [ -f /tmp/IamHere ]; then
+		"	echo "Jsem tu"
+		"fi
+		
+		příkaz když true
+		"[ výraz ] && příkaz 
+		X
+		příkaz když false
+		"[ výraz ] || příkaz	
+		
+		
+		- while:
+		"while true; do
+		"
+		"done
+
+		- for:
+		"for POLOZKA in a b c d
+		"do
+		"	echo $POLOZKA
+		"done
+		
+		"for i in $KOUPIT; do
+		"	echo $s!
+
+		- čtení vstupu: read Vstup
+		
+		"done
+
+Virtualizace - pc v softwaru 
