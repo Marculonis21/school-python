@@ -1,0 +1,103 @@
+GNU/GPL (GNU = GNU not Unix, GPL = general public licence)
+Linux, BSD (FreeBSD, OpenBSD)
+TERMINÁL
+pwd
+cd / = change directory
+	cd = domácí složka
+ls = výpis
+	ls -l = long - dlouhý výpis
+	ls -la = skryté soubory
+šipkou vyvolám předchozí příkaz
+když text v prvním sloupci začíná:
+	d = directory
+	l = link
+	- = domkument
+tabulátor doplňuje slova Dok -> Dokumenty (píšu dokud mi nefunguje tabulátor - má více možností na doplnění)
+Ctrl+L = maže příkazy
+home	-> ru	-> dokumenty
+		-> download
+relativní cesta: cd ../Download
+absolutní cesta (začíná domácí složkou - začíná /): cd /home/ru/Download
+~ = domácí adresář
+.. = nadřazený adresář -> cd ../.. (o 2 odresáře nahoru)
+*.py = pro všechny soubory s koncovkou .py
+./ = cesta - pustí program - př.: ./deset_cisel.py (ukončím Ctrl+C)
+which ls = kde je
+mkdir = nový adresář
+rmdir = smazání adresáře - musí být prázdný
+cp = kopírování souboru
+rm = smazání souboru, linku
+	rm -r = smazání celého odresáře (rekursivní mazání - od této složky smaže vše)
+mv = přemístění
+hard link:
+	soubor.txt \
+		    -> i-node -> data
+	odkaz1.txt /
+	nejsou na sobě závislí - můžu smazat soubor.txt
+soft link:
+	odkaz1.txt -> soubor.txt -> i-node -> data
+	jsou na době závislí - nelze smazat původní soubor bez ztráty dat
+ln -s = utvoření linku
+vim = textový editor (nepoužívá Ctrl, Alt)
+	- 3 režimy: prohlížecí, psací, čekající na příkazy
+	- psaní do textu - Insert
+	- psaní příkazů - Esc 	-> :w (zapsat)
+				-> :q (uložit)
+				-> :u (zpět)
+	- mazání řádku v prohlížecím režimu: dd
+manuálové stránky - man (+ příkaz)
+	-> vyhledávání = /
+	-> konec = q
+rozlišují se malé a velké znaky
+práva: r - read, w - write, x - execute (spustit)
+práva se nastavují těmto: u - owner, g - group, o - others
+UID - user ID
+GID - group ID
+PID - process id
+oktanová soustava = osmičková soustava (3 bity)
+-rw-r-xr--
+	-	rw-	r-x	r--
+	typ	u	g	o
+	souboru	110	101	100
+		6	5	4
+typ souboru např. d - directory (složka)
+oktanová soustava - vyjádření práv 3 číslice v oktanové soustavě - nejčastěji pro běžný soubor 644, pro spustitelný soubor 755
+nastavení práv: chmod (př.: chmod 735 progr1.py) - číslo za chmod vyjádření práv
+dlouhý výpis:
+práva		počet hard linků	owner	group
+-rw-r-xr--	1			ru	users
+pro složky r - číst, w - měnit obsah, x - spustitelné z terminálu
+systém funguje v číslech (UID, GID)
+id = napíše moje UID a GID
+top = procesy v systému - PID, USERS (na čem to běží - práva), S (stav - sleeping, running, waiting)
+			- load average - čísla ukazující vytížení systému (čísla začínající 0 -> skoro nepracuje)
+ps = komunikace s procesy
+ps -aux = vypíše procesy
+| = pipe (spojuje příkazy)
+ps -aux | less = statický výpis procesů, ve kterém se lze pohybovat, lze v něm i vyhledávat (/vyhledávané)
+ps aux | grep vyhledávané = vyfiltruje pouze řádky s vyhledávaným slovem
+kill = zrušení procesu, zadává se s PID
+htop = podobné jako top, lze použít na rušení procesů jako kill
+	- pomocí F9 se dají najít čísla příklazů, např. 15 SIGTERM, 9 SIGKILL
+příkazová řádka
+	- linuxové příkazy v pgm2 v pdf
+	- shell - interpreter příkazového řádku
+		- např. bash
+	- lze psát skripty nebo jen příkazy stejně jako v pyshell (akorát tam interpreter pythonu, zde interpreter bashe)
+	- kolona - příkazy oddělené |
+		 - klávesnice			 pipe			obrazovka
+			stdin -> příkaz1 -> stdout  stdin -> příkaz2 -> stdout
+		 - ls -l | more = stránkuje dlouhý výpis
+		 - ls -al | less = lze se pohybovat
+		 - ps aux | less
+		 - ps aux | grep helnova | less
+	- seznamy - příkaz1; příkaz2; příkaz3; ... = postupně vykoná příkazy
+		  - spojka && = druhý se provede pouze pokud první se provede bez chyby
+		  - spojka || = druhý se provede pouze pokud první vrátí chybový stav
+		  - spojka & = spuštění příkazui na pozadí - příkazy na sebe nečekají, první se spustí v nové kopii shellu a přesune se do pozadí
+	- stdin = standartní vstup, většinou klávesnice
+	- stdout = standartní výstup, většinou monitor
+	- > = přesměrování stdout, např. ls > s.txt (přesměrování do nově vytvořeného textového souboru), ls > /dev/lpr (přesměrování na tiskárnu)
+	- < = přesměrování stdin
+	- stderr = standartní výstup s errorem
+	- 2> = přesměrování chybového výstupu, např. ls adr1 2> /dev/null (chybové hlášení se úplně vymaže, nikde se nehromadí)
