@@ -148,4 +148,12 @@ shellové skripty - "hashmark" '#!/bin/bash'
 		
 		"done
 
+		- echo "echo -n mažu" (-n neřádkuje) 
+
+du - shell příkaz, velikost souborů v adresáři
+	-s (sumarrize)
+	-h (humanreadable)
+	
+
 Virtualizace - pc v softwaru 
+
