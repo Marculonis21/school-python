@@ -150,10 +150,23 @@ shellové skripty - "hashmark" '#!/bin/bash'
 
 		- echo "echo -n mažu" (-n neřádkuje) 
 
+		- split v bash
+		" echo $s | awk -F'.' '(print $1)'
+		(awk separuje pomocí '.' -> vypíše první proměnnou)
+		(když nezadám separátor -> rozdělí slova pomocí mezer
+
 du - shell příkaz, velikost souborů v adresáři
 	-s (sumarrize)
 	-h (humanreadable)
 	
 
 Virtualizace - pc v softwaru 
-
+	- hardware + software Hypervizor
+	- hypervizor může být i bez systému
+	- virtualizace se musí povolit v biosu
+	- virtualbox, KVM
+	-----------------
+	- připojení ve škole
+	- "Správce virtuálních strojů -> nové připojení"
+	- uživatelské jméno - vuser
+	- host - vh
