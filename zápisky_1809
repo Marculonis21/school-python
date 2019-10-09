@@ -158,6 +158,9 @@ shellové skripty - "hashmark" '#!/bin/bash'
 du - shell příkaz, velikost souborů v adresáři
 	-s (sumarrize)
 	-h (humanreadable)
+
+cat něco >> něco někam
+	- přesměrování obsahu souboru na jinou polohu (>> append) (> make new)
 	
 
 Virtualizace - pc v softwaru 
@@ -167,6 +170,39 @@ Virtualizace - pc v softwaru
 	- virtualbox, KVM
 	-----------------
 	- připojení ve škole
+	
+	ferda login: root
+	password: you know what I mean
+	
 	- "Správce virtuálních strojů -> nové připojení"
 	- uživatelské jméno - vuser
 	- host - vh
+	- adduser jméno
+	- usery v /home/ nebo v cat /etc/passwd
+		kralik:x:1000:1000:/home/kralik: /bin/bash
+		login:password:UID:GID:HOMEDIR:SHELL
+	
+	- změna hesla - passwd user
+	- heslo userů cat /etc/shadow
+	- userdel -rf jméno (r adresář; f force i kdyby tam byl)
+
+	- reboot pro restart
+	- yum install balík (pro instalaci)
+	- uname -r - kernel info
+	- ip addr - net/connection info
+	- ifconfig
+	- vlastní ipv4: 10.12.0.161 (pamatovat)
+	- service (kouknout na program (deamon) běžící na pozadí)
+	#Přihlašování na dálku	
+	- sshd server
+	- ssh klient (připojování mezi pc)
+	- "ssh [jméno clienta]@[ip]" -> root heslo
+		"root@10.12.0.161" - > root heslo
+
+	- na pc who/w pro usery
+	- copy na server scp [(co) (komu):(kam)]
+	
+	- do .bashrc alias na připojení na server 
+		"alias bringmeferda='ssh root@10.12.0.161'"
+
+-tvl https://www.reddit.com/r/unixporn/comments/dekj2i/oc_a_spotify_terminal_user_interface_written_in/
