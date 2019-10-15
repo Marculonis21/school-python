@@ -205,4 +205,10 @@ Virtualizace - pc v softwaru
 	- do .bashrc alias na připojení na server 
 		"alias bringmeferda='ssh root@10.12.0.161'"
 
+	- vzdálený port přes VPN - přes wan
+		vpn - PPTP
+
+	"vpn.gybon.cz" - doména
+	"10.12.0.0/24"
+
 -tvl https://www.reddit.com/r/unixporn/comments/dekj2i/oc_a_spotify_terminal_user_interface_written_in/
