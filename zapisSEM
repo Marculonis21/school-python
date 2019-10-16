@@ -201,14 +201,34 @@ Virtualizace - pc v softwaru
 
 	- na pc who/w pro usery
 	- copy na server scp [(co) (komu):(kam)]
-	
 	- do .bashrc alias na připojení na server 
 		"alias bringmeferda='ssh root@10.12.0.161'"
+    
+    PŘIPOJOVÁNÍ NA VIRT PC
+    https://moodle.gybon.cz/mod/page/view.php?id=13528
 
+    - přístup k virt pc přes LAN
+        virt adresa ipv4 10.12.0.0/24 - 10.12.0.XX
+        "ping 10.12.0.XX"
+    -> "ssh login@10.12.0.XX"
+
+    - bash - route / route -n 
+        vypsání spojení
+    
 	- vzdálený port přes VPN - přes wan
 		vpn - PPTP
+        připojení z cizí než z LAN
 
-	"vpn.gybon.cz" - doména
-	"10.12.0.0/24"
+        SERVER: vpn.gybon.cz == 195.113.185.170
+        
+        pro WIN Putty (ssh client)
+        LINUX ssh v bash
+
+    - DU připojit se k virt pc z domu :) 
+	
 
 -tvl https://www.reddit.com/r/unixporn/comments/dekj2i/oc_a_spotify_terminal_user_interface_written_in/
+
+MATICE
+    - "seznam sloupcových vektorů" - "dvojrozměrné pole (list)"
+    - 
