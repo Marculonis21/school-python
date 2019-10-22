@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 
-def makeMat(y,x):
-    mat = []
-    for yLoop in range(int(y)):
-        radek=[]
-        for xLoop in range(int(x)):
-            radek.append(int(input("Zadejte hodnotu [{}][{}]: ".format(yLoop,xLoop))))
-        mat += [radek]
-    return mat
+from novaMat import *
 
 def matCompatibility(a,b):
     if(len(a[0]) == len(b)):
@@ -17,41 +10,35 @@ def matCompatibility(a,b):
 
 def nasobeni(a,b):
     mat = []
-    for newy in range(len(a)):
-        dopsat
-
+    for i in range(len(a)):
+        radek = []
+        x=0
+        for j in range(len(a[i])):
+            x += a[i][j] * b[j][i]
+        radek += [x]
+    mat += [radek]
+    return mat            
+        #dopsat ještě ne
+    
     
 
 if __name__ == "__main__":
-    print("Vytváření matice A:\nZadejte počet sloupců a řádků oddělených čarou (y,x)")
-    while True:
-        try:
-            y,x = input().split(',')
-            break
-        except:
-            print("wrong!")
             
-    A = makeMat(y,x)
+    A = makeMat()
     print(A)
     print(len(A[0]))
 
-    print("Vytváření matice B:\nZadejte počet sloupců a řádků oddělených čarou (y,x)")
-    while True:
-        try:
-            y,x = input().split(',')
-            break
-        except:
-            print("wrong!")
-    B = makeMat(y,x)
+    B = makeMat()
     print(B)
     print(len(B))
 
     fififi = matCompatibility(A,B)
     if(fififi):
-        nasobeni(A,B)
+        newMat = nasobeni(A,B)
     else:
         print("Matice není možno násobit")
-    
+        
+    print(newMat)    
 
     
 
