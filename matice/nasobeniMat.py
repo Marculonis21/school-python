@@ -10,15 +10,17 @@ def matCompatibility(a,b):
 
 def nasobeni(a,b):
     mat = []
+
     for i in range(len(a)):
-        radek = []
-        x=0
-        for j in range(len(a[i])):
-            x += a[i][j] * b[j][i]
-        radek += [x]
-    mat += [radek]
-    return mat            
-        #dopsat ještě ne
+        radek=[]
+        for j in range(len(b[0])):
+            s=0
+            for p in range(len(a)):
+                s+=A[i][p]*B[p][j]
+            radek += [s]
+        mat += [radek]
+    return mat  
+    #dopsat ještě ne
     
     
 

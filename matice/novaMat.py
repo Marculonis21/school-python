@@ -37,7 +37,24 @@ def rozsirena():
         print(mat)
     return mat
 
+def printMat(A, roz=False):
+    for i in range(len(A)):
+        print()
+        if not(roz):
+            print("|",end="")
+        for x in range(len(A[0])):
+            print("  {}".format(A[i][x]), end="")
+            if(roz):
+                if(x == len(A[0])-2):
+                    print("  |", end="")
+        if not(roz):
+            print("  |",end="")
+            
+
 print()
                          
 if __name__ == "__main__":
+    A = rozsirena()
+    printMat(A, True)
+    printMat(A)
     pass
