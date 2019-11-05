@@ -58,7 +58,7 @@ oktanová soustava = osmičková soustava (3 bity)
 -rw-r-xr--
 	-	rw-	r-x	r--
 	typ	u	g	o
-	souboru	110	101	100
+	souboru	110	101	100shift
 		6	5	4
 typ souboru např. d - directory (složka)
 oktanová soustava - vyjádření práv 3 číslice v oktanové soustavě - nejčastěji pro běžný soubor 644, pro spustitelný soubor 755
@@ -232,3 +232,39 @@ Virtualizace - pc v softwaru
 MATICE
     - "seznam sloupcových vektorů" - "dvojrozměrné pole (list)"
     - 
+
+https://askubuntu.com/questions/465109/where-should-i-put-my-script-so-that-i-can-run-it-by-a-direct-command
+
+DATABÁZE
+    
+    - nejjednodušší "databáze" - excel/"tabulkový procesor"
+
+    - tabulka (definice tabulky - pojmenování položek + seznam typů)
+        - položka/item/field
+        - typ dat pro item
+    
+    - "relační databáze"
+        - pojem databáze = soubor tabulek (hromada :))
+        -> mezi sebou vztahy, procesy
+            ("spolupráce" nezávislých tabulek)
+            - tzv. relace (spojení) mezi tabulkami (dat.) 
+        
+        - "relace" = vazba tabulek
+            "tři typy relací"
+            - může být v různém poměru 1:1 / 1:n / n:n
+
+    - primární klíč (private key) - v každé tabulce nutný
+        - často ID - nesmí být duplicitní hodnota
+    - cizí klíč - "klíč (odkaz) do jiné tabulky"
+    
+
+    - databáze over "excel"
+        - dat. může být webová - multi - více lídí na jedné databázi
+            (přístup dat pro klienty)
+    
+    - SQL - strukturovaný dotazovací jazyk
+		- SQL server
+		- příkazy jazyka sql
+        - klient -> databáze 
+            (klient přes server (s databází) přes příkazy sql
+             komunikuje s databází)
