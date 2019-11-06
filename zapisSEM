@@ -268,3 +268,42 @@ DATABÁZE
         - klient -> databáze 
             (klient přes server (s databází) přes příkazy sql
              komunikuje s databází)
+
+    - MySQL = "systém řízení báze dat"
+        - Apache, MySQL, PHP (trojkombinace) - server, připojení, jazyk
+
+    1.Instalace webového serveru APACHE na virtual
+    2.MariaDB (mysql)
+    3.firewall aby byl server přístupný
+
+    Jazyk SQL
+    - vše ukončeno středníkem
+    - \u / use vybrání databáze, která se bude používat
+    - show databases;
+    - show tables;
+    - CREATE DATABASE name;
+    - DROP DATABASE name; = delete / může se i bez caps
+    - CREATE TABLE adresy(
+        id INT AUTO_INCREMENT,
+        prijmeni VARCHAR(50),
+        ...
+        PRIMARY KEY(id)
+      )
+    
+    - "CAPS asi není potřeba"
+
+    - varchar - volný typ proměnné (max 50 znaků)
+
+    - show columns from 'jmeno-databáze';
+        -vypsat tabulku
+    
+    - INSERT - pro vložení záznamu
+    "insert into 'jmeno-tabulky' '(polozky)' values(hodnoty);"
+    
+    - SELECT - výpis hodnot v tabulce
+    "select * from 'jmeno-tabulky'" (* = all)
+
+    - UPDATE - úprava existujícího řádku ++ ('where' udává jaký řádek !! jinak je změna u všech)
+    "update 'jmeno-tabulky' set 'hodnota-column' = 'hodnota (hradec)' where id=1"
+    "update adresy set obec = 'Hradec' where id=1"
+    
