@@ -1,0 +1,14 @@
+#vypis absolventy roku 1989
+select * from abs where rokmat='1989'
+
+#vypis všechny studenty (jmenný seznam) studentů, kterým byl třídní p. Kout
+SELECT abs.prijmeni, abs.jmeno, profesor.prijmeni, profesor.jmeno from abs, tridni, profesor where abs.rokmat=tridni.rokmat and abs.para=tridni.para and abs.stdel=tridni.stdel and tridni.id_prof=profesor.id_prof and profesor.prijmeni='Kout' order by abs.prijmeni
+
+#vypis seznam tříd kde byl třídní p. Erban
+select rokmat,stdel,para from tridni,profesor where tridni.id_prof=profesor.id_prof and profesor.prijmeni='Erban'  
+
+#kdo byl třídní p.Adámka
+select * from abs,tridni,profesor where abs.rokmat=tridni.rokmat and abs.para=tridni.para and tridni.id_prof=profesor.id_prof and abs.prijmeni='Adámek' and abs.jmeno='Pavel'
+
+#kolik maturantů maturovalo v roce 2000
+select count(id) from abs where abs.rokmat='2000'

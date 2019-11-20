@@ -314,3 +314,10 @@ DATABÁZE
     "select prijmeni,jmeno,rokmat,para,stdel from profesor,tridni where
 'vazebni podminka (př. profesor.id_prof=tridni.id_prof)' where 'vypisovaci podm'"
     - select abs.rokmat,abs.prijmeni,abs.jmeno,abs.para,abs.stdel,profesor.jmeno,profesor.prijmeni from abs,tridni,profesor where abs.rokmat=tridni.rokmat and tridni.para=abs.para and tridni.id_prof=profesor.id_prof and abs.prijmeni='Adámek' and abs.jmeno='Pavel'
+
+    - volné string jako if
+    "select * from tabulka where jmeno like 'Petr%'" -> hledá Petr/Petra/...
+    
+    - kolikrát někdo něco (třídnictví učitele)
+    "count(*) as počet... from ... where ... group by (podmínka countu) order
+     by počet desc"
