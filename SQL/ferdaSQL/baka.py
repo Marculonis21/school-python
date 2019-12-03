@@ -10,7 +10,7 @@ def menuWork():
 
     for kod, text in mess:
         print("{} ----- {}".format(kod,text))
-    
+
     while True:
         volba = input("Volba? ").lower()
         good=False
@@ -22,17 +22,39 @@ def menuWork():
             break
         else:
             print("Wrong INPUT")
-    
+
     return volba
 
 def zadejStudenta(cursor):
-        sql = "INSERT into student (prijmeni,jmeno) values (%s,%s)"
-        prijmeni = input("Zadej příjmení studenta: ")
-        jmeno = input("Zadej jméno studenta: " )
+    sql = "INSERT into student (prijmeni,jmeno) values (%s,%s)"
+    prijmeni = input("Zadej příjmení studenta: ")
+    jmeno = input("Zadej jméno studenta: " )
 
-        cursor.execute(sql,(prijmeni,jmeno))
+    cursor.execute(sql,(prijmeni,jmeno))
 
+def vypisAll_student(cursor):
+    sql1 = "SELECT * from student"
+    cursor.execute(sql1)
+    for item in cursor:
+        print("{} {}".format(item['prijmeni'], item['jmeno']))
 
+    return cursor
+
+def vyberStudenta(cursor)
+        out = input("Zadej příjmení studenta: ")
+
+        idS = ''
+        cursor.execute("select * from student")
+        for item in cursor:
+            if(out == item['prijmeni']):
+                idS = int(item['id'])
+                return [idS,item['prijmeni'],item['jmeno']]
+
+    def zadejZnamku(cursor,out):
+        sql2 = "INSERT into znamky (id_student, predmet, znamka) values (%s,%s,%s)"
+        predmet, znamka = input("Zadejte předmět a známku (př.: M 1 nebo Cj 5):\n").split(' ')
+
+        cursor.execute(sql2, (out[0], predmet, znamka))
 
 if __name__ == '__main__':
     conn = pymysql.connect(host='localhost',
@@ -52,20 +74,12 @@ if __name__ == '__main__':
         elif(act == 's'):
             zadejStudenta(cursor)
         elif(act == 'z'):
-            sql1 = "SELECT prijmeni, jmeno, id from student"
-            cursor.execute(sql1)
-            for item in cursor:
-                print("{} {}".format(item['prijmeni'], item['jmeno']))
-            
-            out1 = input("Zadejte příjmení studenta: ")
-            idS = ''
-            for item in cursor:
-                if(out1 == item['prijmeni']):
-                    idS = item['id']
-
-            sql2 = "INSERT into znamky (id_studenta, )" 
-            pass
+            vypisAll_student(cursor)
+            out = vyberStudenta(cursor)
+            zadejZnamku(cursor, out)
         elif(act == 'v'):
+            vypisAll_student(cursor)
+
             pass
 
         conn.commit()
