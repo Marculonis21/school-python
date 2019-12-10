@@ -23,13 +23,13 @@ if __name__ == '__main__':
         except:
             print("Špatně zadáno - zadejte číselnou hodnotu")
 
-    sql = "select profesor.titul, profesor.prijmeni, profesor.jmeno from profesor, tridni where profesor.id_prof = tridni.id_prof and tridni.rokmat = %s"
+    sql = "select profesor.titul, profesor.prijmeni, profesor.jmeno, tridni.stdel, tridni.para from profesor, tridni where profesor.id_prof = tridni.id_prof and tridni.rokmat = %s"
 
     cursor.execute(sql, rokmat)
 
     print("\nV roce {} byli třídními maturitních ročníků učitelé:".format(rokmat))
     for item in cursor:
-        print("{} {} {}".format(item['titul'],item['prijmeni'],item['jmeno']))
+        print("{} {} {} - třída {}, studijní délka {}".format(item['titul'],item['prijmeni'],item['jmeno'],item['para'],item['stdel']))
 
     conn.close()
 
