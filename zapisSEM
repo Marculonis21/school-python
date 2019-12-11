@@ -276,7 +276,7 @@ DATABÁZE
     2.MariaDB (mysql)
     3.firewall aby byl server přístupný
 
-    Jazyk SQL
+Jazyk SQL
     - vše ukončeno středníkem
     - \u / use vybrání databáze, která se bude používat
     - show databases;
@@ -321,3 +321,69 @@ DATABÁZE
     - kolikrát někdo něco (třídnictví učitele)
     "count(*) as počet... from ... where ... group by (podmínka countu) order
      by počet desc"
+
+
+
+###
+PHP
+###
+
+    PHP = scriptovací program (jako python)
+        - scriptovací (v úvodu zadáme interpreter -> překladač běží za běhu)
+          X
+        - Céčko - nejdřív celá kompilace (překladač) -> exe soubor a ten se
+          spustí
+          X
+        - Java - částečný překlad do "byte códu" -> ten se pouští pomocí jre
+          "java runtime engine" (od java)
+
+    - u PHP - na webu -> síťová (webová) aplikace typu klient-server (prohlížeč-apache) 
+        - klient server - komunikace pomocí http/https - hypertext transfer protocol
+        - www - tcp/ip protokol
+        - "Chrome" - program, který umí ukazovat na html soubory
+        
+    - client side - (prohlížeč)
+        - př. JavaScript (psaní scriptů pro prohlížeče)
+    
+    - Java umí obojí - být na straně klienta i na serveru
+        - klient -> java applet
+        - server -> servlet
+    
+    - PHP - serverside programming
+        - na serveru soubory (př. .php) = scripty jazyka php - vykonáván serverem
+        - script na webu -> webový interpreter (php engine) -> formuje html -> 
+        html jde k serveru
+
+    SYNTAXE 
+    - proměnné s $
+    - syntaxe ohraničovaná {}
+    - loop 
+        - "for ($i = 1; $1 <= 10; $i++)
+           {
+               echo "<font size=\"$i\"> $i </font> <br>\n";
+           }
+    
+
+####
+Html
+####
+    - hypertext markup language
+    = značkovací jazyk
+    - pomocí tagů "označkovávám text" (tagy ~ elementy)
+    - stejně jako xml je to pouze text
+
+    - O html stránkách:
+    - "<html>" kořenový element
+    - "<head>" záhlaví 
+    - "<bodz>" tělo stránky
+        - párové tagy - vždy -> <html> </html>
+
+    - tag může obsahovat parametry
+    "<tag P="parametr" P2="druhý">"
+    - obsahovat text
+    "<h1>Nadpis stránky</h1>"
+
+    - na virtuálu, stránky na /var/www/html/...
+    
+    - PHP v html  
+    "<?php phpinfo(); ?>"
