@@ -2,6 +2,7 @@
 
 for item in $(du -hs $1/*/); do
 
+    echo $item
     #for loop du dělí text zvláštním způsobem
     #První se vrací velikost, pak umístění. Potřeba data na chvílí ukládat. 
     if [[ $item == *"/"* ]]; then

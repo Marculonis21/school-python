@@ -387,3 +387,58 @@ Html
     
     - PHP v html  
     "<?php phpinfo(); ?>"
+
+    - UDĚLAT PROJEKT PHP - CO CHCEME TAKŽE NEJVÍC TRYHARD DATABÁZE FILMŮ 
+    - KRÁST OBRÁZKY Z WEBU :)
+
+########
+SÍTĚ
+########
+https://moodle.gybon.cz/mod/page/view.php?id=13940
+- sada protokolů
+
+TCP/IP
+    - vrstvy (nižší slouží vyšším)
+        v: Linková a Fyzická | Síťová (IP) | TCP/UDP | Aplikační
+
+        - někde na routeru DHCP
+            udává MAC, ip adresy
+
+        - Fyzická + linková (na lin. vrstvě se na identifikaci používají MAC
+          adresy)
+            - ETHERNET - posílání dat na základě mac adres (zároveň ale vidí
+              vyšší vrstvy)
+            - l. vrstva - propojení dvou bodů v lokálním mediu
+
+        - Síťová (IP)
+            - IPv4: 4 bity - 1.-3. adresa v síti, 4. adresa bodu;
+            (+ síťová maska): 4 bity (255.255.255.0) 
+            255 - 11111111; 0 - 00000000 (maska a ip adresa AND operace -> vypadne ip sítě)
+            
+            - max uzlů je 254 (1.-254.) adres. 2**8 = 256 (256 - 2)
+            - x.x.x.0 je adresa sítě | x.x.x.255 adresa broadcastu (když něco
+              chceme poslat všem :))
+            
+            - ++NAT technologie = router schovává pod sebou (jednou ipv4
+              adresou svojí lokální síť s vlastníma adresama)
+            
+            - IPv6: v podstatě kolik bitů chceme 
+            - síťový prefix "10.12.0.0/24" - "24 bitů bude adresa sítě"
+            
+            - s. vrstva - propojení dvou bodů kdekoliv na síti
+            - jak se dostat k adrese někoho cizího?? Jak poslat někomu zásilku
+            -> balíček od nás se "odveze" z našeho pc na router přes MAC adresu, 
+               routery podle síťových masek předávají informaci mezi sebou až do cílového bodu.
+               
+               KAŽDÁ VĚC MÁ V SOBĚ IP ADRESU (BRÁNU) ROUTERU
+               3 důležité věci pro TCP/IP (MAC,IP adresa,BRÁNA)
+        
+        - TCP
+            - vytváří "virtuální duplexní tunel" mezi dvěma spojenými IP
+              adresami
+            - na TCP vrstvě už dochází k domlouvání, spojení, kontrole,
+              zabezpečení proti ztrátě dat
+            - "handshaky" - domlouvání správného spojení 
+
+            - "z pohledu TCP je mezi spojenými IP adresami kdekoliv na světě
+              tunel, neřeší kudy to jde, ale jestli přichází správně atd"
