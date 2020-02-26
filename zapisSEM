@@ -399,7 +399,7 @@ https://moodle.gybon.cz/mod/page/view.php?id=13940
 
 TCP/IP
     - vrstvy (nižší slouží vyšším)
-        v: Linková a Fyzická | Síťová (IP) | TCP/UDP | Aplikační
+        v: Linková a Fyzická | Síťová (IP) | Transportní - TCP/UDP | Aplikační
 
         - někde na routeru DHCP
             udává MAC, ip adresy
@@ -408,7 +408,7 @@ TCP/IP
           adresy)
             - ETHERNET - posílání dat na základě mac adres (zároveň ale vidí
               vyšší vrstvy)
-            - l. vrstva - propojení dvou bodů v lokálním mediu
+            - *l. vrstva* - propojení dvou bodů v lokálním mediu
 
         - Síťová (IP)
             - IPv4: 4 bity - 1.-3. adresa v síti, 4. adresa bodu;
@@ -432,6 +432,8 @@ TCP/IP
                
                KAŽDÁ VĚC MÁ V SOBĚ IP ADRESU (BRÁNU) ROUTERU
                3 důležité věci pro TCP/IP (MAC,IP adresa,BRÁNA)
+
+            - ++ARP/RARP - protokol překlad - Ip -> MAC
         
         - TCP
             - vytváří "virtuální duplexní tunel" mezi dvěma spojenými IP
@@ -442,3 +444,19 @@ TCP/IP
 
             - "z pohledu TCP je mezi spojenými IP adresami kdekoliv na světě
               tunel, neřeší kudy to jde, ale jestli přichází správně atd"
+
+        - Aplikační vrstva
+            - DNS server = převod jmenného pojmenování "seznam.cz" na ip adresy
+            - "FQDN" fully qualified domain name = úplné pojmenování pc 
+                - to co používáme u pojmenování pc sítí 
+            
+            - FQDN -> ip klasickej
+              FQDN <- ip reverzní překlad
+
+            - domény a subdomény
+                - př. "host.doména.TLD" (tld - top level domain (edu, gov, cz, net, org))
+                       www .senzam.cz
+            
+            - jestli chceme domény - nic.cz == "cz.nic"
+                - správce domény cz
+                ( nic.org = správce domény org )
